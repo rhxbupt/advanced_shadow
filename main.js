@@ -782,7 +782,7 @@
  
     function drawTriangle(gl,program,triangle,angle,viewProjectMatrix) {
         //设置三角形图形的旋转角度，并绘制图形
-        g_modelMatrix.setRotate(0, 0.0, -1.0, 0.0);
+        g_modelMatrix.setRotate(angle, 0.0, -1.0, 0.0);
         draw(gl, program, triangle, viewProjectMatrix);
     }
  
@@ -794,7 +794,7 @@
     }
     
     function drawCube(gl,program,cube,angle,viewProjectMatrix){
-        g_modelMatrix.setRotate(0, 0.0, 1.0, 0.2);
+        g_modelMatrix.setRotate(angle, 0.0, 1.0, 0.2);
         draw(gl, program, cube, viewProjectMatrix);
     }
 
