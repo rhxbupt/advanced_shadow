@@ -16,14 +16,45 @@
 		</style>
 			<body onload="main();">
 				<canvas id="canvas" width="800" height="800"></canvas>
-			</body>
-		<script type="text/javascript" src="lib/webgl-utils.js"></script>
-		<script type="text/javascript" src="lib/webgl-debug.js"></script>
-		<script type="text/javascript" src="lib/cuon-matrix.js"></script>
-		<script type="text/javascript" src="lib/cuon-utils.js"></script>
-		<script type="text/javascript" src="main.js"></script>
+				</body>
+			<script type="text/javascript" src="lib/webgl-utils.js"></script>
+			<script type="text/javascript" src="lib/webgl-debug.js"></script>
+			<script type="text/javascript" src="lib/cuon-matrix.js"></script>
+			<script type="text/javascript" src="lib/cuon-utils.js"></script>
+			<script type="text/javascript" src="main.js"></script>
 	</head>
+	<style> 
+		.div-a{ float:left;width:33%;border:1px solid #F00} 
+		.div-b{ float:left;width:33%;border:1px solid #000}
+		.div-c{ float:left;width:33%;border:1px solid #0f0} 
+		</style> 
+	<body>
+		
+		<div  class="div-a" id="radioButton">
+			<input type="radio" name="culling" value="none" checked="checked" onclick="setType(0)"> 
+				<label>Basic Hard Shadow</label><br>
+			<input type="radio" name="culling" value="frustum" onclick="setType(1)">
+				<label>Shadow With PCF </label><br>
+			<input type="radio" name="culling" value="portal" onclick="setType(2)">
+				<label>Shadow With PCSS </label><br><br>
+			
+		</div>
 
-
+		<div  class="div-b" id="radioButton2">
+			<input type="radio" name="1" value="1"  onclick="setPoisson(1)">
+			<label>Poisson Sample </label><br><br>
+		<input type="radio" name="1" value="2" checked="checked" onclick="setPoisson(2)">
+			<label>Normal Sample </label><br><br>
+		</div>
+		<div  class="div-c" id="radioButton3">
+			<input type="radio" name="saple" value="1" checked="checked" onclick="setSample(0)">
+			<label>Sample Times: 16  </label><br>
+		<input type="radio" name="saple" value="2" onclick="setSample(1)">
+			<label>Sample Times: 32 </label><br>
+		<input type="radio" name="saple" value="3" onclick="setSample(2)">
+			<label>Sample Times: 64 </label><br><br>
+		</div>
+	</body>
+	
 
 </html>
